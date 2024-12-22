@@ -26,7 +26,7 @@ function Dropdown(props: DropdownData) {
     [onSelect]
   );
 
-  if (!options) return;
+  if (!options) return null;
 
   return (
     <div
