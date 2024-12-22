@@ -4,12 +4,15 @@ import "./Dropdown.css";
 type DropdownData = {
   options: number[];
   onSelect: (option: number) => void;
+  preSelectedOption?: number;
 };
 
 function Dropdown(props: DropdownData) {
-  const { options, onSelect } = props;
+  const { options, onSelect, preSelectedOption } = props;
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(options[0]);
+  const [selectedOption, setSelectedOption] = useState(
+    preSelectedOption || options[0]
+  );
 
   const toggleDropdown = useCallback(() => {
     setIsOpen(!isOpen);

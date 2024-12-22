@@ -43,7 +43,11 @@ const App = () => {
     );
   }
 
-  return <Table paginationEnabled={true} data={data} />;
+  return (
+    <div className="page-container">
+      <Table paginationEnabled={true} data={data} />
+    </div>
+  );
 };
 
 export default App;

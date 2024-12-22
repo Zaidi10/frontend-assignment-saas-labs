@@ -107,7 +107,11 @@ const Pagination = (props: PaginatedData) => {
         <label htmlFor="itemsPerPageDropdown" className="dropdownLable">
           Rows per page:{" "}
         </label>
-        <Dropdown options={rowOptions} onSelect={onItemsPerPageChange} />
+        <Dropdown
+          options={rowOptions}
+          onSelect={onItemsPerPageChange}
+          preSelectedOption={itemsPerPage}
+        />
       </div>
     </div>
   );

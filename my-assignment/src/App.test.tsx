@@ -33,7 +33,7 @@ test("Test 2 Check if Table Headers are being rendered", async () => {
     );
   });
 
-  expect(screen.getByText(/Title/i)).toBeInTheDocument();
+  expect(screen.getByText(/S.No./i)).toBeInTheDocument();
   expect(screen.getByText(/Percentage funded/i)).toBeInTheDocument();
   expect(screen.getByText(/Amount pledged/i)).toBeInTheDocument();
 });
@@ -52,7 +52,7 @@ test("Test 3 Check if Table Data is being Rendered", async () => {
   });
 
   const trElements = screen.queryAllByRole("row");
-  expect(trElements).toHaveLength(3);
+  expect(trElements).toHaveLength(6);
 
   expect(screen.getByText(/186/i)).toBeInTheDocument();
   expect(screen.getByText(/15823/i)).toBeInTheDocument();
@@ -162,16 +162,16 @@ test("Test 8 On Selecting DropDown No of Rows are chaning", async () => {
 
   const trElements = screen.queryAllByRole("row");
 
-  expect(trElements).toHaveLength(3);
+  expect(trElements).toHaveLength(6);
   const button = screen.getByTestId("open-modal");
 
   fireEvent.click(button);
-  const option5 = screen.getByTestId("option-5");
+  const option5 = screen.getByTestId("option-2");
 
   expect(screen.getByRole("menu")).toBeInTheDocument();
   expect(option5).toBeInTheDocument();
   fireEvent.click(option5);
 
   const trElements2 = screen.queryAllByRole("row");
-  expect(trElements2).toHaveLength(6);
+  expect(trElements2).toHaveLength(3);
 });

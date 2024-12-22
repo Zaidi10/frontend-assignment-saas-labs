@@ -24,7 +24,7 @@ const Table = (props: TableData) => {
       totalItems: number;
     }
   );
-  const [rowPerPage, setRowsPerPage] = useState(2);
+  const [rowPerPage, setRowsPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
 
   const setProducts = useCallback(async () => {
